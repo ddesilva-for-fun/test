@@ -2,8 +2,11 @@ Simple implementation of a sentiment analyser class using OpenAI's Responses API
 
 # Example Usage:
 sentiment_analyser = SentimentAnalyser(input="Comment from website post", llm_client=openai_cli, config=config) # where openai_cli is of type OpenAI and config is of type LlmConfig found in src/custom_types
+
 response_dict = sentiment_analyser.analyse(messages=sentiment_analyser.prepare_llm_input())
+
 sentiment_score = response_dict.get("sentimentScore") # example: 0
+
 label = response_dict.get("sentimentScore") # example: "NEUTRAL"
 
 # Tests:
